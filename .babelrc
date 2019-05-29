@@ -1,0 +1,3 @@
+{
+  "presets": ["./scripts/resolve.preset.js"]
+}
