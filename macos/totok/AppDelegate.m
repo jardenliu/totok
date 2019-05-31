@@ -18,7 +18,7 @@
 -(id)init
 {
   if(self = [super init]) {
-    NSRect contentSize = NSMakeRect(200, 500, 1000, 500); // initial size of main NSWindow
+    NSRect contentSize = NSMakeRect(200, 500, 1200, 900); // initial size of main NSWindow
 
     self.window = [[NSWindow alloc] initWithContentRect:contentSize
                                              styleMask:
@@ -29,14 +29,18 @@
                                                 NSWindowStyleMaskClosable
                                                backing:NSBackingStoreBuffered
                                                  defer:NO];
-
+    
+    
     NSWindowController *windowController = [[NSWindowController alloc] initWithWindow:self.window];
 
     [[self window] setTitleVisibility:NSWindowTitleHidden];
     [[self window] setTitlebarAppearsTransparent:YES];
     
+    NSSize contentMinSize = NSMakeSize(1000, 750);
+    [[self window] setMinSize:contentMinSize];
+    
     [windowController setShouldCascadeWindows:NO];
-    [windowController setWindowFrameAutosaveName:@"totok"];
+    [windowController setWindowFrameAutosaveName:@"Totok"];
 
     [windowController showWindow:self.window];
 
