@@ -11,7 +11,10 @@ module.exports = {
         alias: {
           'react-native': isReactNativeMacos
             ? 'react-native-macos'
-            : 'react-native'
+            : 'react-native',
+            '@styles':'./src/styles',
+            '@components':'./src/components',
+            '@':'./src',
         }
       }
     ]
