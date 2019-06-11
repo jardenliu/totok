@@ -1,4 +1,5 @@
 const COMMAND = process && process.env && process.env._ ? process.env._ : ''
+const config = require('../resolve.config')
 
 const isReactNativeMacos = COMMAND.includes('react-native-macos')
 
@@ -12,9 +13,7 @@ module.exports = {
           'react-native': isReactNativeMacos
             ? 'react-native-macos'
             : 'react-native',
-            '@styles':'./src/styles',
-            '@components':'./src/components',
-            '@':'./src',
+          ...config.alias
         }
       }
     ]
