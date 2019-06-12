@@ -9,6 +9,7 @@
     "macos": "react-native-macos run-macos",
     "windows": "react-native run-windows",
     "pre-packager": "node ./scripts/prebuild.js",
+    "build:macos": "export RN_PLATFORM=macOS && sh ./scripts/build.macos.sh",
     "fixrunios": "sed -i '' 's/!== 0/=== -1/g' node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js",
     "test": "jest"
   },
@@ -61,7 +62,9 @@
     "react-test-renderer": "16.2.0",
     "rn-nodeify": "github:tradle/rn-nodeify",
     "rnpm-plugin-windows": "^0.2.9",
-    "typescript": "^3.5.1"
+    "stream": "0.0.2",
+    "typescript": "^3.5.1",
+    "vm": "^0.1.0"
   },
   "jest": {
     "preset": "react-native"
