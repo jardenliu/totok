@@ -1,15 +1,13 @@
 const config = require('../resolve.config')
 let COMMAND = process && process.env && process.env._ ? process.env._ : ''
 
-if (process.env.NODE_ENV === 'production') {
-  COMMAND =
-    process && process.env && process.env.RN_PLATFORM
-      ? process.env.RN_PLATFORM
-      : ''
-  COMMAND = COMMAND.toLowerCase()
-}
+let RN_ENV =
+  process && process.env && process.env.RN_PLATFORM
+    ? process.env.RN_PLATFORM
+    : ''
+RN_ENV = RN_ENV.toLowerCase()
 
-const isReactNativeMacos = COMMAND.includes('macos')
+const isReactNativeMacos = COMMAND.includes('macos') || RN_ENV.includes('macos')
 
 module.exports = {
   presets: ['react-native'],
