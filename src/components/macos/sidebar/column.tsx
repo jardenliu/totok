@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#909399',
-    fontWeight: '400'
+    fontFamily: 'HelveticaNeue-Light'
   },
   content: {
     width: 250,
