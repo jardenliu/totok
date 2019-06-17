@@ -9,6 +9,8 @@ import {
   Image
 } from 'react-native'
 
+import Column from './column'
+
 type Props = {}
 
 export default class Sidebar extends Component<Props> {
@@ -20,6 +22,12 @@ export default class Sidebar extends Component<Props> {
             source={require('@/assets/logo/banner@400.png')}
             style={styles.bannerImage}
           />
+          <Column title="我的音乐" style={styles.firstColumn}>
+            <Text>Menus</Text>
+          </Column>
+          <Column title="我的歌单" style={styles.column}>
+            <Text>Menus</Text>
+          </Column>
         </View>
       </View>
     )
@@ -30,7 +38,7 @@ const styles = StyleSheet.create({
   container: {
     width: 250,
     flexDirection: 'row',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f2f2f2',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     alignSelf: 'stretch'
@@ -45,5 +53,11 @@ const styles = StyleSheet.create({
     width: 1148 / 10,
     height: 400 / 10,
     resizeMode: 'stretch'
+  },
+  firstColumn: {
+    marginTop: 40
+  },
+  column: {
+    marginTop: 20
   }
 })
