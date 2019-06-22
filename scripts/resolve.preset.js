@@ -1,4 +1,5 @@
 const config = require('../resolve.config')
+const path = require('path')
 let COMMAND = process && process.env && process.env._ ? process.env._ : ''
 
 let RN_ENV =
@@ -16,9 +17,12 @@ module.exports = {
       'module-resolver',
       {
         alias: {
-          'react-native': isReactNativeMacos
-            ? 'react-native-macos'
-            : 'react-native',
+          'react-native': path.resolve(
+            __dirname,
+            '..',
+            'node_modules',
+            isReactNativeMacos ? 'react-native-macos' : 'react-native'
+          ),
           ...config.alias
         }
       }

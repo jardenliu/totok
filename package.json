@@ -11,6 +11,7 @@
     "pre-packager": "node ./scripts/prebuild.js",
     "build:macos": "export RN_PLATFORM=macOS && sh ./scripts/build.macos.sh",
     "fixrunios": "sed -i '' 's/!== 0/=== -1/g' node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js",
+    "fixrunmacos": "sh ./scripts/fix.macos.sh",
     "test": "jest"
   },
   "dependencies": {
