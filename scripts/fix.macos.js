@@ -19,21 +19,8 @@ const runtask = () => {
     })
 }
 
-task('fix run-ios simulator error', function () {
-    try {
-        const target = path.resolve(__dirname, '..', 'node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js')
-        let targetFileContext = fs.readFileSync(target, 'utf-8')
-        const newFileContext = targetFileContext.replace(/version\.indexOf\(\'iOS\'\) !== 0/ig, `version.indexOf('iOS') === -1`)
-        fs.writeFileSync(target, newFileContext)
-        console.log(`[fix-ios]: fix run-ios simulator success!`)
-    } catch (e) {
-        console.log(`[fix-ios]:${e}`)
-    }
-})
-
-
 task('fix run-ios : CFBundleIdentifier  error', function () {
-    const targetfolder = 'node_modules/react-native/third-party/glog-*'
+    const targetfolder = 'node_modules/react-native-macos/third-party/glog-*'
     const fix = child_process.exec(`cd ${targetfolder} && ./configure`)
     fix.stdout.on('data', data => console.log(data))
     fix.stderr.on('data', data => console.log(data))

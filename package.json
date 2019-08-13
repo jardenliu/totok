@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "ios": "react-native run-ios",
+    "ios": "export RN_PLATFORM=iOS &&react-native run-ios",
     "android": "react-native run-android",
     "macos": "export RN_PLATFORM=macOS && react-native-macos run-macos",
     "windows": "react-native run-windows",
     "pre-packager": "node ./scripts/prebuild.js",
     "build:macos": "export RN_PLATFORM=macOS && sh ./scripts/build.macos.sh",
-    "fixrunios": "sed -i '' 's/!== 0/=== -1/g' node_modules/react-native/local-cli/runIOS/findMatchingSimulator.js",
-    "fixrunmacos": "sh ./scripts/fix.macos.sh",
+    "fix": "npm run fix-ios && npm run fix-macos",
+    "fix-ios": "node ./scripts/fix.ios.js",
+    "fix-macos": "node ./scripts/fix.macos.js",
     "test": "jest"
   },
   "dependencies": {
