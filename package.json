@@ -40,7 +40,7 @@
     "react-native-randombytes": "git+https://github.com/jardenliu/react-native-macos-randombytes.git",
     "react-native-tcp": "^3.3.0",
     "react-native-udp": "^2.6.1",
-    "react-native-windows": "^0.53.0",
+    "react-native-windows": "^0.81.2",
     "react-zlib-js": "^1.0.4",
     "readable-stream": "^1.0.33",
     "stream-browserify": "^1.0.0",
